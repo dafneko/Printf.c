@@ -79,8 +79,8 @@ int	main(void)
 	// count += printf("this is orig %x %x\n", 1234, -1234);
 	// mine += ft_printf("this is mine %p %p\n", ptr, p);
 	// count += printf("this is orig %p %p\n", ptr, p);
-	// mine += ft_printf("this is mine %s %s\n", "i miss snow", "42 is the best");
-	// count += printf("this is orig %s %s\n", "i miss snow", "42 is the best");
+	// mine += ft_printf("this is mine %s %s\n", "thy will be done", "42 is the best");
+	// count += printf("this is orig %s %s\n", "thy will be done", "42 is the best");
 	// mine += ft_printf("this is mine %i %d\n", 75385782, -88888);
 	// count += printf("this is orig %i %d\n", 75385782, -88888);
 	// mine += ft_printf("this is mine %u %u\n", 0001, 1164);
