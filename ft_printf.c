@@ -29,10 +29,7 @@ int	type_check(char format, va_list ap)
 	else if (format == 'x')
 		count += putnbr_base(va_arg(ap, int), HEX);
 	else if (format == 'X')
-	{
 		count += putnbr_base(va_arg(ap, int), HEX_U);
-		printf("in check = %i\n", count);
-	}
 	else if (format == '%')
 		count += print_char('%');
 	else
