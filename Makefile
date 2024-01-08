@@ -17,8 +17,7 @@ all: $(NAME)
 clean:
 	rm -f *.o
 
-fclean:
-	$(MAKE) clean
+fclean: clean
 	rm -f $(NAME)
 
 re:
