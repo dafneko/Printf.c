@@ -1,4 +1,4 @@
-NAME = printf.a
+NAME = libftprintf.a
 HEADERDIR = .
 SRC = ft_printf.c utils.c 
 CC = cc
