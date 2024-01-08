@@ -10,7 +10,7 @@ $(NAME): $(OBJ)
 	$(AR) $@ $^
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $< -I $(HEADERDIR)
+	$(CC) $(CCFLAGS) -c -o $@ $< -I $(HEADERDIR)
 
 all: $(NAME)
 

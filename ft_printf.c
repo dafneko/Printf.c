@@ -9,7 +9,7 @@
 /*   Updated: 2023/12/25 21:03:12 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
+#include "ft_printf.h"
 
 int	type_check(char format, va_list ap)
 {
@@ -51,7 +51,7 @@ int	ft_printf(const char *str, ...)
 			count += type_check(*(++str), ptr);
 			str++;
 		}
-		if (*str)
+		else
 			count += print_char(*(str++));
 	}
 	va_end(ptr);

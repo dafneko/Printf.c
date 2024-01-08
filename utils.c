@@ -9,7 +9,7 @@
 /*   Updated: 2024/01/08 16:36:14 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_strlen(const char *s)
 {
@@ -31,7 +31,7 @@ int	print_str(char *s)
 	int	len;
 
 	if (!s)
-		print_str("(null)");
+		return (print_str("(null)"));
 	len = ft_strlen(s);
 	while (*s)
 	{
@@ -67,8 +67,8 @@ int	putnbr_base(long int nb, char *base)
 
 int	print_pointer(uintptr_t ptr, char *base, int flag)
 {
-	int	base_len;
-	int	count;
+	unsigned int	base_len;
+	int				count;
 
 	if (!ptr && flag)
 		return (print_str("(nil)"));
