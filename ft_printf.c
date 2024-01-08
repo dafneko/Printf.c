@@ -58,12 +58,13 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
 	int count = 0;
 	int mine = 0;
 	char *p = "Hi";
-	char *ptr = "Wow";
+	char *ptr = "";
 	printf("Address = %p\n", p);
 	mine += ft_printf("this is mine %p\n", p);
 	count += printf("this is orig %p\n", p);
@@ -82,6 +83,16 @@ int	main(void)
 	count += printf("this is orig %u %u\n", 0001, 1164);
 	mine += ft_printf("this is mine %c %c\n", 'o', 'g');
 	count += printf("this is orig %c %c\n", 'o', 'g');
+	mine += ft_printf("this is mine %p %s\n", NULL, ptr);
+	count += printf("this is orig %p %s\n", NULL, ptr);
+	mine += ft_printf("this is mine %c %%\n", '&');
+	count += printf("this is orig %c %%\n", '&');
+	mine += ft_printf("this is mine %u %x\n", 2147483647, 2147483647);
+	count += printf("this is orig %u %x\n", 2147483647, 2147483647);
+	mine += ft_printf("non void pointer w mine %p\n", p);
+	count += printf("non void pointer w orig %p\n", p);
+	mine += ft_printf("void pointer w mine %p\n", (void *)1234);
+	count += printf("void pointer w orig %p\n", (void *)1234);
 	printf("mine = %i\n", mine);
 	ft_printf("mine = %i\n", mine);
 	printf("org = %i\n", count);
