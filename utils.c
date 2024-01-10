@@ -32,16 +32,17 @@ int	print_str(char *s)
 
 	if (!s)
 		return (print_str("(null)"));
-	len = ft_strlen(s);
+	len = 0;
 	while (*s)
 	{
 		print_char(*s);
+		len++;
 		s++;
 	}
 	return (len);
 }
 
-int	putnbr_base(long int nb, char *base)
+int	putnbr_base(long long int nb, char *base)
 {
 	int	base_len;
 	int	count;
@@ -53,8 +54,6 @@ int	putnbr_base(long int nb, char *base)
 		count += print_char('-');
 		count += putnbr_base(-nb, base);
 	}
-	else if (nb < 0 && base_len == 16)
-		count += putnbr_base((unsigned int)nb, base);
 	else if (nb >= base_len)
 	{
 		count += putnbr_base(nb / base_len, base);

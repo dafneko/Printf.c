@@ -27,9 +27,9 @@ int	type_check(char format, va_list ap)
 	else if (format == 'u')
 		count += putnbr_base(va_arg(ap, unsigned int), DIG);
 	else if (format == 'x')
-		count += putnbr_base(va_arg(ap, int), HEX);
+		count += putnbr_base(va_arg(ap, unsigned int), HEX);
 	else if (format == 'X')
-		count += putnbr_base(va_arg(ap, int), HEX_U);
+		count += putnbr_base(va_arg(ap, unsigned int), HEX_U);
 	else if (format == '%')
 		count += print_char('%');
 	else
@@ -42,22 +42,35 @@ int	ft_printf(const char *str, ...)
 	va_list	ptr;
 	int		count;
 
-	va_start(ptr, str);
 	count = 0;
+	if (!str)
+		return (-1);
+	va_start(ptr, str);
 	while (*str)
 	{
-		if (*str == '%' && *str)
+		if (*str == '%')
 		{
-			count += type_check(*(++str), ptr);
+			count += type_check(str[1], ptr);
 			str++;
 		}
 		else
-			count += print_char(*(str++));
+			count += print_char(*str);
+		str++;
 	}
 	va_end(ptr);
 	return (count);
 }
+
 /*
+#include <stdio.h>
+
+int main () {
+	// ft_printf(0);
+	// printf("%i", printf(0));
+	printf("%i", ft_printf(0));
+	return 0;
+}
+
 #include <stdio.h>
 int	main(void)
 {

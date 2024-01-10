@@ -25,7 +25,7 @@
 int	ft_strlen(const char *s);
 int	print_char(char c);
 int	print_str(char *s);
-int	putnbr_base(long int nb, char *base);
+int	putnbr_base(long long int nb, char *base);
 int	print_pointer(uintptr_t ptr, char *base, int flag);
 // printf
 int	type_check(char format, va_list ap);
